@@ -173,4 +173,3 @@ module Data::MessagePack::Packer {
         return Blob.new( 0xdf, (24,16,8,0).map( $h.elems +> * +& 0xff ), $h.kv.map( { _pack( $_).list } ) );
     }
 }
-# vim: ft=perl6

@@ -209,4 +209,3 @@ sub _unpack-double( Blob $b, Int $position is rw ) {
 
     $s * $mantissa * 2**$exp;
 }
-# vim: ft=perl6

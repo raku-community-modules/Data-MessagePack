@@ -84,4 +84,3 @@ Timo Paulssen
 Artistic License 2.0
 
 =end pod
-# vim: ft=perl6
