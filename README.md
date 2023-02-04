@@ -1,6 +1,4 @@
-# Perl6-Data-MessagePack
-
-[![Build Status](https://travis-ci.org/pierre-vigier/Perl6-Data-MessagePack.svg?branch=master)](https://travis-ci.org/pierre-vigier/Perl6-Data-MessagePack)
+[![Actions Status](https://github.com/raku-community-modules/Raku-Data-MessagePack/workflows/test/badge.svg)](https://github.com/raku-community-modules/Raku-Data-MessagePack/actions)
 
 NAME
 ====
@@ -73,3 +71,4 @@ License
 =======
 
 Artistic License 2.0
+

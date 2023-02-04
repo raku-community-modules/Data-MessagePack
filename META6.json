@@ -1,16 +1,28 @@
 {
-    "raku"          : "6.c",
-    "name"          : "Data::MessagePack",
-    "license"       : "Artistic-2.0",
-    "version"       : "0.1.2",
-    "authors"       : [ "github:pierre-vigier","github:timo" ],
-    "description"   : "Data::MessagePack",
-    "depends"       : [],
-    "provides" : {
-        "Data::MessagePack"    : "lib/Data/MessagePack.rakumod",
-        "Data::MessagePack::Packer"    : "lib/Data/MessagePack/Packer.rakumod",
-        "Data::MessagePack::Unpacker"    : "lib/Data/MessagePack/Unpacker.rakumod",
-        "Data::MessagePack::StreamingUnpacker"    : "lib/Data/MessagePack/StreamingUnpacker.rakumod"
-    },
-    "source-url"    : "git@github.com:pierre-vigier/Perl6-Data-MessagePack.git"
+  "authors": [
+    "github:pierre-vigier",
+    "github:timo"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "Perl 6 implementation of MessagePack",
+  "license": "Artistic-2.0",
+  "name": "Data::MessagePack",
+  "provides": {
+    "Data::MessagePack": "lib/Data/MessagePack.rakumod",
+    "Data::MessagePack::Packer": "lib/Data/MessagePack/Packer.rakumod",
+    "Data::MessagePack::StreamingUnpacker": "lib/Data/MessagePack/StreamingUnpacker.rakumod",
+    "Data::MessagePack::Unpacker": "lib/Data/MessagePack/Unpacker.rakumod"
+  },
+  "raku": "6.c",
+  "resources": [
+  ],
+  "source-url": "git@github.com:pierre-vigier/Perl6-Data-MessagePack.git",
+  "tags": [
+  ],
+  "test-depends": [
+  ],
+  "version": "0.1.2"
 }
