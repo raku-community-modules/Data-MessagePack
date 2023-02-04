@@ -19,7 +19,7 @@
   "raku": "6.c",
   "resources": [
   ],
-  "source-url": "git@github.com:pierre-vigier/Perl6-Data-MessagePack.git",
+  "source-url": "https://github.com/raku-community-modules/Raku-Data-MessagePack.git",
   "tags": [
   ],
   "test-depends": [
