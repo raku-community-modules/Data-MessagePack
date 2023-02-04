@@ -7,7 +7,7 @@
   ],
   "depends": [
   ],
-  "description": "Perl 6 implementation of MessagePack",
+  "description": "Raku implementation of MessagePack",
   "license": "Artistic-2.0",
   "name": "Data::MessagePack",
   "provides": {

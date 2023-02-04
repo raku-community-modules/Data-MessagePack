@@ -14,7 +14,7 @@ our sub unpack( Blob $blob ) {
 =begin pod
 =head1 NAME
 
-Data::MessagePack - Perl 6 implementation of MessagePack
+Data::MessagePack - Raku implementation of MessagePack
 
 =head1 SYNOPSIS
 

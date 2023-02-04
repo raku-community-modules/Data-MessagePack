@@ -3,7 +3,7 @@
 NAME
 ====
 
-Data::MessagePack - Perl 6 implementation of MessagePack
+Data::MessagePack - Raku implementation of MessagePack
 
 SYNOPSIS
 ========
