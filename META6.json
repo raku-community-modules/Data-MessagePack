@@ -7,10 +7,10 @@
     "description"   : "Data::MessagePack",
     "depends"       : [],
     "provides" : {
-        "Data::MessagePack"    : "lib/Data/MessagePack.pm6",
-        "Data::MessagePack::Packer"    : "lib/Data/MessagePack/Packer.pm6",
-        "Data::MessagePack::Unpacker"    : "lib/Data/MessagePack/Unpacker.pm6",
-        "Data::MessagePack::StreamingUnpacker"    : "lib/Data/MessagePack/StreamingUnpacker.pm6"
+        "Data::MessagePack"    : "lib/Data/MessagePack.rakumod",
+        "Data::MessagePack::Packer"    : "lib/Data/MessagePack/Packer.rakumod",
+        "Data::MessagePack::Unpacker"    : "lib/Data/MessagePack/Unpacker.rakumod",
+        "Data::MessagePack::StreamingUnpacker"    : "lib/Data/MessagePack/StreamingUnpacker.rakumod"
     },
     "source-url"    : "git@github.com:pierre-vigier/Perl6-Data-MessagePack.git"
 }
