@@ -1,5 +1,5 @@
 {
-    "perl"          : "6.c",
+    "raku"          : "6.c",
     "name"          : "Data::MessagePack",
     "license"       : "Artistic-2.0",
     "version"       : "0.1.2",

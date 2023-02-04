@@ -33,7 +33,7 @@ Or for streaming:
 
     $unpacker.tap( -> $value {
         say "Got new value";
-        say $value.perl;
+        say $value.raku;
     }, done => { say "Source supply is done"; } );
 
 DESCRIPTION
