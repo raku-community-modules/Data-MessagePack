@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 27;
@@ -33,3 +32,5 @@ ok Data::MessagePack::pack( -2147483648 ) ~~ Blob.new(0xd2, 0x80, 0x00, 0x00, 0x
 ok Data::MessagePack::pack( -2147483649 ) ~~ Blob.new(0xd3, 0xff, 0xff, 0xff, 0xff, 0x7f, 0xff, 0xff, 0xff), "Negative integer packed correctly";
 ok Data::MessagePack::pack( -9223372036854775808 ) ~~ Blob.new(0xd3, 0x80, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00), "Negative integer packed correctly";
 throws-like { Data::MessagePack::pack( -9223372036854775809 ); }, X::Data::MessagePack::Packer;
+
+# vim: expandtab shiftwidth=4

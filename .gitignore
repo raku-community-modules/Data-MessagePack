@@ -1,1 +1,3 @@
-.precomp
+.precomp/
+/Data-MessagePack-*
+*.rakucov

@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 3;
@@ -15,3 +14,5 @@ ok %h eqv { a => Any, b => [1], c => { aa => 3, bb => [] } }, "Hash unpacked cor
 
 %h = Data::MessagePack::unpack( Blob.new(222,0,16,162,49,50,12,161,56,8,162,49,52,14,162,49,49,11,161,53,5,161,49,1,161,54,6,161,52,4,162,49,53,15,161,48,0,162,49,51,13,162,49,48,10,161,57,9,161,55,7,161,51,3,161,50,2) );
 ok %h eqv (^16).map( {$_ => $_} ).Hash, "Hash unpacked correctly";
+
+# vim: expandtab shiftwidth=4

@@ -1,5 +1,3 @@
-use v6;
-
 class X::Data::MessagePack::Packer is Exception {
   has $.reason;
   method message()
@@ -146,30 +144,32 @@ module Data::MessagePack::Packer {
 
         my $binary = $sign +< 63 +| ( $exp +& 0x7FF ) +< 52 +| ( $frac-shifted +& 0xFFFFFFFFFFFFF );
 
-        return Blob.new( 0xcb, (56, 48 ... 0).map( $binary +> * +& 0xff) );
+        Blob.new( 0xcb, (56, 48 ... 0).map( $binary +> * +& 0xff) )
     }
 
     my multi _pack( List:D $l where $l.elems < 2**4 ) {
-        return Blob.new( 0x90 + $l.elems, $l.map( { _pack( $_).list } ) );
+        Blob.new( 0x90 + $l.elems, $l.map( { _pack( $_).list } ) )
     }
 
     my multi _pack( List:D $l where 2**4 <= $l.elems < 2**16 ) {
-        return Blob.new( 0xdc, (8,0).map( $l.elems +> * +& 0xff ), $l.map( { _pack( $_).list } ) );
+        Blob.new( 0xdc, (8,0).map( $l.elems +> * +& 0xff ), $l.map( { _pack( $_).list } ) )
     }
 
     my multi _pack( List:D $l where 2**16 <= $l.elems < 2**32 ) {
-        return Blob.new( 0xdd, (24,16,8,0).map( $l.elems +> * +& 0xff ), $l.map( { _pack( $_).list } ) );
+        Blob.new( 0xdd, (24,16,8,0).map( $l.elems +> * +& 0xff ), $l.map( { _pack( $_).list } ) )
     }
 
     my multi _pack( Hash:D $h where $h.elems < 2**4 ) {
-        return Blob.new( 0x80 + $h.elems, $h.kv.map( { _pack( $_).list } ) );
+        Blob.new( 0x80 + $h.elems, $h.kv.map( { _pack( $_).list } ) )
     }
 
     my multi _pack( Hash:D $h where 2**4 <= $h.elems < 2**16 ) {
-        return Blob.new( 0xde, (8,0).map( $h.elems +> * +& 0xff ), $h.kv.map( { _pack( $_).list } ) );
+        Blob.new( 0xde, (8,0).map( $h.elems +> * +& 0xff ), $h.kv.map( { _pack( $_).list } ) )
     }
 
     my multi _pack( Hash:D $h where 2**16 <= $h.elems < 2**32 ) {
-        return Blob.new( 0xdf, (24,16,8,0).map( $h.elems +> * +& 0xff ), $h.kv.map( { _pack( $_).list } ) );
+        Blob.new( 0xdf, (24,16,8,0).map( $h.elems +> * +& 0xff ), $h.kv.map( { _pack( $_).list } ) )
     }
 }
+
+# vim: expandtab shiftwidth=4

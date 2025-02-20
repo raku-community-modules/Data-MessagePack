@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 6;
@@ -14,3 +13,5 @@ pass "Test of 2**32 string is too big, just assume it is working";
 #throws-like { Data::MessagePack::pack( 'a' x (2**32) ); }, X::Data::MessagePack::Packer;
 
 ok Data::MessagePack::pack( "\c[HOUSE]" ) ~~ Blob.new( 0xa3, 0xe2, 0x8c, 0x82 ), "String with more bytes than graphemes packed correctly";
+
+# vim: expandtab shiftwidth=4

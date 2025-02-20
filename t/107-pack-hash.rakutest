@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 3;
@@ -12,3 +11,5 @@ is-deeply Data::MessagePack::unpack( Data::MessagePack::pack( { a => Any, b => [
 my %hh;
 for ^16 -> $i { %hh{$i} = $i };
 is-deeply Data::MessagePack::unpack( Data::MessagePack::pack( %hh ) ), %hh, "hash packed correctly";
+
+# vim: expandtab shiftwidth=4

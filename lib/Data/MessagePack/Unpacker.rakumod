@@ -1,5 +1,3 @@
-use v6;
-
 my @lookup-table =
     0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0a,
     0x0b, 0x0c, 0x0d, 0x0e, 0x0f, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15,
@@ -125,31 +123,30 @@ module Data::MessagePack::Unpacker {
 
 }
 
-    sub _unpack( Blob $b, Int $position is rw ) {
-        my $next = @lookup-table[$b[$position++]];
-        $next ~~ Callable ?? $next($b, $position) !! $next;
+sub _unpack( Blob $b, Int $position is rw ) {
+    my $next = @lookup-table[$b[$position++]];
+    $next ~~ Callable ?? $next($b, $position) !! $next;
+}
+
+sub _unpack-array( Blob $b, Int $position is rw, Int $elems ) {
+    my @array = ();
+    for ^$elems {
+        @array.push(
+            _unpack($b, $position)
+        );
     }
 
-    sub _unpack-array( Blob $b, Int $position is rw, Int $elems ) {
-        my @array = ();
-        for ^$elems {
-            @array.push(
-                _unpack($b, $position)
-            );
-        }
+    @array;
+}
 
-        @array;
+sub _unpack-map( Blob $b, Int $position is rw, Int $elems ) {
+    my %map = ();
+    for ^$elems {
+        %map{ _unpack($b, $position) } = _unpack($b, $position);
     }
 
-    sub _unpack-map( Blob $b, Int $position is rw, Int $elems ) {
-        my %map = ();
-        for ^$elems {
-            %map{ _unpack($b, $position) } = _unpack($b, $position);
-        }
-
-        %map;
-    }
-
+    %map;
+}
 
 sub _unpack-uint( Blob $b, Int $position is rw, Int $byte-count ) {
     my Int $res = 0;
@@ -167,8 +164,6 @@ sub _unpack-bin( Blob $b, Int $position is rw, Int $length ) {
 
     $blob;
 }
-
-
 
 sub _unpack-string( Blob $b, Int $position is rw, Int $length ) {
     my $str = $b.subbuf($position, $length).decode;
@@ -209,3 +204,5 @@ sub _unpack-double( Blob $b, Int $position is rw ) {
 
     $s * $mantissa * 2**$exp;
 }
+
+# vim: expandtab shiftwidth=4

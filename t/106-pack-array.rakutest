@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 10;
@@ -17,3 +16,5 @@ ok Data::MessagePack::pack( [{},{ a=> 2},3] ) ~~ Blob.new(147,128,129,161,97,2,3
 
 ok Data::MessagePack::pack( [ 1 xx 16 ] ) ~~ Blob.new( 0xdc, 0x00, 0x10, 0x01 xx 16 ), "Array packed correctly";
 ok Data::MessagePack::pack( [ 'a' xx 16 ] ) ~~ Blob.new( 0xdc, 0x00, 0x10, (0xa1, 0x61) xx 16 ), "Array packed correctly";
+
+# vim: expandtab shiftwidth=4

@@ -1,6 +1,5 @@
-use v6;
-
 use Test;
+
 use Data::MessagePack;
 
 plan 7;
@@ -13,3 +12,5 @@ for @value -> $val {
 
 my $var;
 ok Data::MessagePack::pack( $var ) ~~ Blob.new( 0xc0 ), "Undefined is packed correctly";
+
+# vim: expandtab shiftwidth=4

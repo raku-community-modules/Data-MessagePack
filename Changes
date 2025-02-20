@@ -1,6 +1,10 @@
 Revision history for Data-MessagePack
 
 {{$NEXT}}
+    - Added CI badge for each OS
+    - Updated copyright year
+    - Modernized pod, removed obsolete references
+    - Some small code tweaks
 
 0.1.3  2023-02-04T21:16:33+01:00
     - Initial version in Raku era

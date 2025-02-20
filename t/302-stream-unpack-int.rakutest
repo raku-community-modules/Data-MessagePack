@@ -1,5 +1,5 @@
-use v6;
 use Test;
+
 use Data::MessagePack::StreamingUnpacker;
 
 plan 23;
@@ -43,3 +43,5 @@ $unpacked.tap( -> $v {
 for @to_send -> $byte {
     $supplier.emit( $byte );
 }
+
+# vim: expandtab shiftwidth=4
